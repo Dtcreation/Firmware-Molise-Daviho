@@ -74,17 +74,17 @@
 /*** Section 1 Wanhao Printer ***/
 
 //#define D12_230
-//#define D12_300
+#define D12_300
 //#define D12_500
 
 /*** Section 2 Mono or Dual ***/
 
-//#define MONO
+#define MONO
 //#define DUAL
 
 /*** Section 3 Extruder Type ***/
 
-//#define TITAN       // Stock Extruder
+#define TITAN       // Stock Extruder
 //#define BMG         // Choose this if you are using BMG/BMG Wind
 //#define HEMERA      // Choose this if you are using HEMERA
 //#define MATRIX      // Choose this if you are using MATRIX
@@ -98,7 +98,7 @@
 //#define A_4988
 //#define LV_8729
 //#define TMC_2208          // UART Mode
-//#define TMC_2209          // UART Mode
+#define TMC_2209          // UART Mode
 
   /*** Z Driver ***/
 //#define A_4988_2          // Stock Drivers / Standalone
@@ -107,7 +107,7 @@
 //#define TMC_2208_STA_2    // Standalone Mode
 //#define LV_8729_2
 //#define TMC_2208_2        // UART Mode
-//#define TMC_2209_2        // UART Mode
+#define TMC_2209_2        // UART Mode
 
   /*** E0 E1 Drivers ***/
 //#define A_4988_3          // Stock Drivers / Standalone
@@ -116,16 +116,16 @@
 //#define TMC_2208_STA_3    // Standalone Mode
 //#define LV_8729_3
 //#define TMC_2208_3        // UART Mode
-//#define TMC_2209_3        // UART Mode
+#define TMC_2209_3        // UART Mode
 
 /*** Section 5 Bed Leveling ***/
 
-//#define BLTOUCH      //uncomment if you use a BLTouch
+#define BLTOUCH      //uncomment if you use a BLTouch
   #ifdef BLTOUCH
     #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
     #define Z_MIN_PROBE_REPEATABILITY_TEST
-    #define NOZZLE_TO_PROBE_OFFSET { -45, -0.7, 0 }   //Offset preset for this support : https://www.thingiverse.com/thing:4812496
-    //#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }       //Offset preset for this fanduct fot Direct Drive MOD : https://www.thingiverse.com/thing:3972011
+    //#define NOZZLE_TO_PROBE_OFFSET { -45, -0.7, 0 }   //Offset preset for this support : https://www.thingiverse.com/thing:4812496
+    #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }       //Offset preset for this fanduct fot Direct Drive MOD : https://www.thingiverse.com/thing:3972011
   #endif
 
 //#define ZMIN_SENSOR_AS_PROBE                      //uncomment to use Z min as Probe for bed leveling (incompatible with BLTouch)
@@ -148,7 +148,7 @@
 /*** Section 6 Options ***/
 
 //#define GRAPHIC_MODE                           // If you prefere TFT Graphic Mode
-//#define DDRIVE                                 // If you upgrade your D12/300 with Molise Direct Drive MOD https://www.thingiverse.com/thing:5029253
+#define DDRIVE                                 // If you upgrade your D12/300 with Molise Direct Drive MOD https://www.thingiverse.com/thing:5029253
 
 /*** Section 7 Sensorless Homing XY ***/
 
@@ -196,7 +196,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Molise 4.1" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Molise 4.2" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -209,7 +209,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT 3
+#define SERIAL_PORT -1
 
 /**
  * Serial Port Baud Rate
@@ -247,7 +247,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_MKS_ROBIN_NANO
+  #define MOTHERBOARD BOARD_MKS_ROBIN_NANO_V3
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
@@ -255,7 +255,7 @@
     #define CUSTOM_MACHINE_NAME "Wanhao D12-230"
   #endif
 #ifdef D12_300
-    #define CUSTOM_MACHINE_NAME "Wanhao D12-300"
+    #define CUSTOM_MACHINE_NAME "Daviho D12-300"
   #endif
 #ifdef D12_500
     #define CUSTOM_MACHINE_NAME "Wanhao D12-500"
@@ -3597,7 +3597,7 @@
 // Usually paired with MKS Robin Nano V2 & V3
 // https://github.com/makerbase-mks/MKS-TFT-Hardware/tree/master/MKS%20TS35
 //
-//#define MKS_TS35_V2_0
+#define MKS_TS35_V2_0
 
 //
 // 320x240, 2.4", FSMC Display From MKS
@@ -3621,7 +3621,7 @@
 // 480x320, 3.5", FSMC Display From MKS
 // Usually paired with MKS Robin Nano V1.2
 //
-#define MKS_ROBIN_TFT35
+//#define MKS_ROBIN_TFT35
 
 //
 // 480x272, 4.3", FSMC Display From MKS
